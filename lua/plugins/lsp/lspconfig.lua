@@ -55,9 +55,21 @@ return {
 
 			local ensure_installed = vim.tbl_keys(opts.servers or {})
 			vim.list_extend(ensure_installed, {
+				-- C/C++
+				"clangd",
+				"cpplint",
+				"clang-format",
+
 				-- Lua
 				"stylua",
 				"lua_ls",
+
+				-- Python
+				"ruff",
+				"mypy",
+				"isort",
+				"pyright",
+				-- "djlint", -- For web
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
