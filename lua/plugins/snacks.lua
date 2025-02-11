@@ -85,7 +85,7 @@ return {
 			function()
 				Snacks.picker.buffers()
 			end,
-			desc = "Buffers",
+			desc = "Recent Buffers",
 		},
 		{
 			"<leader>fc",
