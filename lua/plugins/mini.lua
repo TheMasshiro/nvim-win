@@ -10,6 +10,8 @@ return {
 		},
 	},
 	config = function()
+		local disabled_files_statusline = { snacks_dashboard = true, trouble = true, undotree = true, lazygit = true }
+
 		-- Essentials
 		require("mini.ai").setup()
 		require("mini.bracketed").setup()
@@ -34,11 +36,10 @@ return {
 		require("mini.files").setup()
 
 		-- Statusline
-		local disabled_filetypes = { snacks_dashboard = true, trouble = true, undotree = true }
 		require("mini.statusline").setup({
 			content = {
 				active = function()
-					if disabled_filetypes[vim.bo.filetype] then
+					if disabled_files_statusline[vim.bo.filetype] then
 						vim.cmd("highlight StatusLine guibg=NONE guifg=NONE")
 						return ""
 					end
