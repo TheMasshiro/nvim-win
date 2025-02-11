@@ -34,7 +34,7 @@ return {
 		require("mini.files").setup()
 
 		-- Statusline
-		local disabled_filetypes = { snacks_dashboard = true }
+		local disabled_filetypes = { snacks_dashboard = true, trouble = true, undotree = true }
 		require("mini.statusline").setup({
 			content = {
 				active = function()
