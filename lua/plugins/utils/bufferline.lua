@@ -3,7 +3,22 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	version = "*",
 	dependencies = "nvim-tree/nvim-web-devicons",
-	opts = {},
+	opts = {
+		options = {
+			always_show_bufferline = false,
+			offsets = {
+				{
+					filetype = "neo-tree",
+					text = "Neo-tree",
+					highlight = "Directory",
+					text_align = "left",
+				},
+				{
+					filetype = "snacks_layout_box",
+				},
+			},
+		},
+	},
 	keys = {
 		{ "<leader>bp", "<Cmd>BufferLineTogglePin<CR>", desc = "Toggle Buffer Pin" },
 		{ "<leader>bP", "<Cmd>BufferLineGroupClose ungrouped<CR>", desc = "Delete Non-Pinned Buffers" },
