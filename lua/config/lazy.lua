@@ -19,8 +19,6 @@ vim.g.maplocalleader = "\\"
 
 require("core.options")
 
-vim.g.snacks_animate = false
-
 require("lazy").setup({
 	spec = {
 		{ import = "plugins" },
