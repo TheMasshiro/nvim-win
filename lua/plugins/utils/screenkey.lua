@@ -1,6 +1,5 @@
 return {
 	"NStefan002/screenkey.nvim",
-	lazy = false,
 	version = "*",
 	cmd = "Screenkey",
 	keys = {
@@ -18,6 +17,5 @@ return {
 			title = "",
 		},
 		show_leader = false,
-		group_mappings = false,
 	},
 }
