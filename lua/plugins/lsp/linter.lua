@@ -3,8 +3,18 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		local lint = require("lint")
-		lint.linters_by_ft = {}
-
+		lint.linters_by_ft = {
+			c = { "cpplint" },
+			cpp = { "cpplint" },
+			python = { "ruff", "mypy" },
+		}
+		local cpp = lint.linters.cpplint
+		cpp.args = {
+			"--filter=-legal/copyright",
+			function()
+				return vim.api.nvim_buf_get_name(0)
+			end,
+		}
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
 		vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
 			group = lint_augroup,

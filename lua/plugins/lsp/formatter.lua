@@ -28,7 +28,10 @@ return {
 			}
 		end,
 		formatters_by_ft = {
+			c = { "clang-format" },
+			cpp = { "clang-format" },
 			lua = { "stylua" },
+			python = { "isort", "ruff_format" },
 		},
 	},
 }
