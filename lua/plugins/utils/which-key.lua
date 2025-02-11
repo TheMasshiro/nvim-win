@@ -9,9 +9,9 @@ return {
 			{ "<leader>f", group = "File/Find" },
 			{ "<leader>g", group = "Git" },
 			{ "<leader>h", group = "Git Hunks" },
-			{ "<leader>l", group = "Lsp" },
-			{ "<leader>x", group = "Trouble/Todo" },
-			{ "<leader>z", group = "Scratch/Zen" },
+			{ "<leader>l", group = "LSP", icon = "󰒕" },
+			{ "<leader>x", group = "Trouble/Todo", icon = "󰏫" },
+			{ "<leader>z", group = "Scratch/Zen", icon = "" },
 		},
 	},
 	keys = {
