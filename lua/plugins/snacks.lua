@@ -10,12 +10,12 @@ return {
 			sections = {
 				{
 					section = "terminal",
-					cmd = "chafa %USERPROFILE%\\AppData\\Local\\nvim\\wall.png --format symbols --symbols vhalf --size 60x17 --stretch && timeout /t 1 >nul",
+					cmd = "chafa %USERPROFILE%\\AppData\\Local\\nvim\\wallp.png --format symbols --symbols vhalf --size 60x17 --stretch && timeout /t 1 >nul",
 					height = 17,
 					padding = 1,
 				},
 				{
-					pane = 1,
+					pane = 2,
 					{ section = "keys", gap = 1, padding = 1 },
 					{ section = "startup" },
 				},
