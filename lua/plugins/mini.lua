@@ -10,6 +10,8 @@ return {
 		},
 	},
 	config = function()
+		local disabled_files_statusline = { snacks_dashboard = true, trouble = true, undotree = true, lazygit = true }
+
 		-- Essentials
 		require("mini.ai").setup()
 		require("mini.bracketed").setup()
@@ -32,6 +34,41 @@ return {
 
 		-- File Explorer
 		require("mini.files").setup()
+
+		-- Statusline
+		require("mini.statusline").setup({
+			content = {
+				active = function()
+					if disabled_files_statusline[vim.bo.filetype] then
+						vim.cmd("highlight StatusLine guibg=NONE guifg=NONE")
+						return ""
+					end
+					-- :help mini.statusline
+					local mode, mode_hl = MiniStatusline.section_mode({ trunc_width = 120 })
+					local git = MiniStatusline.section_git({ trunc_width = 40 })
+					local diff = MiniStatusline.section_diff({ trunc_width = 75 })
+					local diagnostics = MiniStatusline.section_diagnostics({ trunc_width = 75 })
+					local lsp = MiniStatusline.section_lsp({ trunc_width = 75 })
+					local filename = MiniStatusline.section_filename({ trunc_width = 140 })
+					local fileinfo = MiniStatusline.section_fileinfo({ trunc_width = 120 })
+					local location = MiniStatusline.section_location({ trunc_width = 75 })
+					local search = MiniStatusline.section_searchcount({ trunc_width = 75 })
+
+					return MiniStatusline.combine_groups({
+						{ hl = mode_hl, strings = { mode } },
+						{ hl = "MiniStatuslineDevinfo", strings = { git, diff, diagnostics, lsp } },
+						"%<",
+						{ hl = "MiniStatuslineFilename", strings = { filename } },
+						"%=",
+						{ hl = "MiniStatuslineFileinfo", strings = { fileinfo } },
+						{ hl = mode_hl, strings = { search, location } },
+					})
+				end,
+				inactive = nil,
+			},
+			use_icons = true,
+			set_vim_settings = true,
+		})
 	end,
 
 	-- Mini.Icons
