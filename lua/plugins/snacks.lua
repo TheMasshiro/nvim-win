@@ -8,17 +8,11 @@ return {
 		dashboard = {
 			enabled = true,
 			sections = {
-				{
-					section = "terminal",
-					cmd = "chafa %USERPROFILE%\\AppData\\Local\\nvim\\wallp.png --format symbols --symbols vhalf --size 60x17 --stretch && timeout /t 1 >nul",
-					height = 17,
-					padding = 1,
-				},
-				{
-					pane = 2,
-					{ section = "keys", gap = 1, padding = 1 },
-					{ section = "startup" },
-				},
+				{ section = "header" },
+				{ icon = " ", title = "Keymaps", section = "keys", indent = 2, padding = 1 },
+				{ icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
+				{ icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
+				{ section = "startup" },
 			},
 		},
 		explorer = { enabled = true },
