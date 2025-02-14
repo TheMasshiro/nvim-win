@@ -36,7 +36,7 @@ return {
 	},
 
 	keys = {
-		-- Top Pickers & Explorer
+		-- Very Useful
 		{
 			"\\s",
 			function()
@@ -71,6 +71,27 @@ return {
 				Snacks.explorer()
 			end,
 			desc = "File Tree",
+		},
+		{
+			"<leader>\\S",
+			function()
+				Snacks.picker.search_history()
+			end,
+			desc = "Search History",
+		},
+		{
+			"<leader>\\b",
+			function()
+				Snacks.picker.lines()
+			end,
+			desc = "Buffer Lines",
+		},
+		{
+			"<leader>\\C",
+			function()
+				Snacks.picker.commands()
+			end,
+			desc = "Commands",
 		},
 
 		-- find
@@ -108,6 +129,13 @@ return {
 				Snacks.picker.recent()
 			end,
 			desc = "Recent",
+		},
+		{
+			"<leader>fh",
+			function()
+				Snacks.picker.help()
+			end,
+			desc = "Help Pages",
 		},
 
 		-- git
@@ -249,7 +277,7 @@ return {
 			function()
 				Snacks.picker.lsp_type_definitions()
 			end,
-			desc = "Goto T[y]pe Definition",
+			desc = "Goto Type Definition",
 		},
 		{
 			"<leader>ls",
@@ -267,8 +295,43 @@ return {
 		},
 
 		-- Search
+		{
+			"<leader>xx",
+			function()
+				Snacks.picker.diagnostics()
+			end,
+			desc = "Diagnostics",
+		},
+		{
+			"<leader>xX",
+			function()
+				Snacks.picker.diagnostics_buffer()
+			end,
+			desc = "Buffer Diagnostics",
+		},
+		{
+			"<leader>xL",
+			function()
+				Snacks.picker.loclist()
+			end,
+			desc = "Location List",
+		},
+		{
+			"<leader>xQ",
+			function()
+				Snacks.picker.qflist()
+			end,
+			desc = "Quickfix List",
+		},
 
 		-- Other
+		{
+			"<leader>bu",
+			function()
+				Snacks.picker.undo()
+			end,
+			desc = "Undo History",
+		},
 		{
 			"<leader>zz",
 			function()
