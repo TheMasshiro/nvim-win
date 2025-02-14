@@ -6,7 +6,12 @@ return {
 		lint.linters_by_ft = {
 			c = { "cpplint" },
 			cpp = { "cpplint" },
+			php = { "phpcs" },
 			python = { "ruff", "mypy" },
+
+			-- Web Things
+			javascript = { "eslint_d" },
+			typescrit = { "eslint_d" },
 		}
 		local cpp = lint.linters.cpplint
 		cpp.args = {

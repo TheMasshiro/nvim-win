@@ -64,12 +64,25 @@ return {
 				"stylua",
 				"lua_ls",
 
+				-- Php
+				"intelephense",
+				"phpcs",
+				"php-cs-fixer",
+
 				-- Python
 				"ruff",
 				"mypy",
 				"isort",
 				"pyright",
 				-- "djlint", -- For web
+
+				-- Web Things
+				"cssls",
+				"emmet_language_server",
+				"eslint_d",
+				"html",
+				"prettierd",
+				"ts_ls",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
