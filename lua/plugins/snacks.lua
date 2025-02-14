@@ -73,21 +73,21 @@ return {
 			desc = "File Tree",
 		},
 		{
-			"<leader>\\S",
+			"\\S",
 			function()
 				Snacks.picker.search_history()
 			end,
 			desc = "Search History",
 		},
 		{
-			"<leader>\\b",
+			"\\b",
 			function()
 				Snacks.picker.lines()
 			end,
 			desc = "Buffer Lines",
 		},
 		{
-			"<leader>\\C",
+			"\\C",
 			function()
 				Snacks.picker.commands()
 			end,
