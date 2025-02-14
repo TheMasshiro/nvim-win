@@ -31,7 +31,19 @@ return {
 			c = { "clang-format" },
 			cpp = { "clang-format" },
 			lua = { "stylua" },
+			php = { "php-cs-fixer" },
 			python = { "isort", "ruff_format" },
+
+			-- Web Things
+			css = { "prettierd" },
+			html = { "prettierd" },
+			javascript = { "prettierd" },
+			typescript = { "prettierd" },
+
+			-- Others
+			json = { "prettierd" },
+			markdown = { "prettierd" },
+			yaml = { "prettierd" },
 		},
 	},
 }
