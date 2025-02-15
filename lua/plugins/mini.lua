@@ -1,7 +1,7 @@
 return {
 	"echasnovski/mini.nvim",
 	event = { "BufReadPre", "BufNewFile" },
-	version = "*",
+	version = false,
 	keys = {
 		{
 			"\\f",
