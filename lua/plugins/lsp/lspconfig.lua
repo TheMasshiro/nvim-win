@@ -11,7 +11,6 @@ return {
 					},
 				},
 			},
-			{ "j-hui/fidget.nvim", opts = {} },
 			{
 				"williamboman/mason.nvim",
 				opts = {
