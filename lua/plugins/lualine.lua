@@ -11,5 +11,6 @@ return {
 				statusline = { "snacks_dashboard", "snacks_picker_list", "trouble" },
 			},
 		},
+		extensions = { "lazy" },
 	},
 }
