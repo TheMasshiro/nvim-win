@@ -17,7 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
-require("core.options")
+require("config.options")
 
 require("lazy").setup({
 	spec = {
@@ -25,7 +25,6 @@ require("lazy").setup({
 		{ import = "plugins.lsp" },
 		{ import = "plugins.utils" },
 	},
-	install = { colorscheme = { "catppuccin" } },
 	checker = {
 		enabled = true,
 		notify = false,
@@ -34,6 +33,7 @@ require("lazy").setup({
 		notify = false,
 	},
 	ui = {
-		border = "rounded",
+		size = { width = 0.9, height = 0.9 },
+		border = { "┏", "━", "┓", "┃", "┛", "━", "┗", "┃" },
 	},
 })

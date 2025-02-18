@@ -4,6 +4,9 @@ return {
 	opts = {
 		preset = "modern",
 		defaults = {},
+		win = {
+			border = { "┏", "━", "┓", "┃", "┛", "━", "┗", "┃" },
+		},
 		spec = {
 			{ "<leader>b", group = "Buffer" },
 			{ "<leader>f", group = "File/Find" },
