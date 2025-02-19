@@ -18,6 +18,7 @@ return {
 		require("mini.pairs").setup()
 		require("mini.surround").setup()
 		require("mini.trailspace").setup()
+		require("mini.git").setup()
 
 		-- Icons
 		require("mini.icons").setup({
