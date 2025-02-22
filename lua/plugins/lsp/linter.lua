@@ -7,7 +7,7 @@ return {
 			c = { "cpplint" },
 			cpp = { "cpplint" },
 			php = { "phpcs" },
-			python = { "ruff", "mypy" },
+			python = { "ruff" },
 
 			-- Web Things
 			javascript = { "eslint_d" },
