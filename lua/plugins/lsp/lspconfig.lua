@@ -30,6 +30,19 @@ return {
 		},
 		opts = {
 			servers = {
+				emmet_language_server = {
+					filetypes = {
+						"html",
+						"htmldjango",
+						"typescriptreact",
+						"javascriptreact",
+						"css",
+						"sass",
+						"scss",
+						"less",
+						"svelte",
+					},
+				},
 				lua_ls = {
 					settings = {
 						Lua = {
@@ -71,7 +84,6 @@ return {
 
 				-- Python
 				"ruff",
-				"mypy",
 				"isort",
 				"pyright",
 				-- "djlint", -- For web
