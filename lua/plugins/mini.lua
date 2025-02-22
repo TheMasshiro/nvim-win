@@ -1,6 +1,5 @@
 return {
 	"echasnovski/mini.nvim",
-	event = { "BufReadPre", "BufNewFile" },
 	version = false,
 	keys = {
 		{
@@ -15,10 +14,12 @@ return {
 		require("mini.bracketed").setup()
 		require("mini.cursorword").setup()
 		require("mini.operators").setup()
-		require("mini.pairs").setup()
 		require("mini.surround").setup()
 		require("mini.trailspace").setup()
 		require("mini.git").setup()
+
+		-- File Explorer
+		require("mini.files").setup()
 
 		-- Icons
 		require("mini.icons").setup({
@@ -31,8 +32,51 @@ return {
 			},
 		})
 
-		-- File Explorer
-		require("mini.files").setup()
+		-- Custom Mini.Pairs
+		require("mini.pairs").setup({
+			modes = { insert = true, command = false, terminal = false },
+			mappings = {
+				[")"] = { action = "close", pair = "()", neigh_pattern = "[^\\]." },
+				["]"] = { action = "close", pair = "[]", neigh_pattern = "[^\\]." },
+				["}"] = { action = "close", pair = "{}", neigh_pattern = "[^\\]." },
+				["["] = {
+					action = "open",
+					pair = "[]",
+					neigh_pattern = ".[%s%z%)}%]]",
+					register = { cr = false },
+				},
+				["{"] = {
+					action = "open",
+					pair = "{}",
+					neigh_pattern = ".[%s%z%)}%]]",
+					register = { cr = false },
+				},
+				["("] = {
+					action = "open",
+					pair = "()",
+					neigh_pattern = ".[%s%z%)]",
+					register = { cr = false },
+				},
+				['"'] = {
+					action = "closeopen",
+					pair = '""',
+					neigh_pattern = "[^%w\\][^%w]",
+					register = { cr = false },
+				},
+				["'"] = {
+					action = "closeopen",
+					pair = "''",
+					neigh_pattern = "[^%w\\][^%w]",
+					register = { cr = false },
+				},
+				["`"] = {
+					action = "closeopen",
+					pair = "``",
+					neigh_pattern = "[^%w\\][^%w]",
+					register = { cr = false },
+				},
+			},
+		})
 	end,
 
 	-- Mini.Icons
