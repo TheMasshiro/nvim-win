@@ -34,7 +34,7 @@ return {
 	{
 		"Wansmer/treesj",
 		cmd = { "TSJToggle", "TSJSplit", "TSJJoin" },
-		keys = { { "<leader>bj", ":TSJToggle<CR>", desc = "Toggle Join" } },
+		keys = { { "\\bj", ":TSJToggle<CR>", desc = "Toggle Join" } },
 		opts = { use_default_keymaps = false },
 	},
 	{
