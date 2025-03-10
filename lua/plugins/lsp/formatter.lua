@@ -4,7 +4,7 @@ return {
 	cmd = { "ConformInfo" },
 	keys = {
 		{
-			"<leader>bf",
+			"\\bf",
 			function()
 				require("conform").format({ async = true, lsp_format = "fallback" })
 			end,
@@ -27,6 +27,14 @@ return {
 				lsp_format = lsp_format_opt,
 			}
 		end,
+		formatters = {
+			isort = {
+				command = "isort",
+				args = {
+					"-",
+				},
+			},
+		},
 		formatters_by_ft = {
 			c = { "clang-format" },
 			cpp = { "clang-format" },
