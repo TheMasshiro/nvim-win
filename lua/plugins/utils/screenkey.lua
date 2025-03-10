@@ -4,7 +4,7 @@ return {
 	cmd = "Screenkey",
 	keys = {
 		{
-			"<leader>bk",
+			"\\bk",
 			"<cmd>Screenkey toggle<cr>",
 			desc = "Toggle Screenkey",
 		},

@@ -2,7 +2,7 @@ return {
 	"norcalli/nvim-colorizer.lua",
 	keys = {
 		{
-			"<leader>bc",
+			"\\c",
 			":ColorizerToggle<CR>",
 			desc = "Toggle Color Highlights",
 		},

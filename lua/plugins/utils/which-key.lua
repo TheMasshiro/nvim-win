@@ -8,13 +8,15 @@ return {
 			border = { "┏", "━", "┓", "┃", "┛", "━", "┗", "┃" },
 		},
 		spec = {
-			{ "<leader>b", group = "Buffer" },
+			{ "<leader>b", group = "Bufferline" },
 			{ "<leader>f", group = "File/Find" },
 			{ "<leader>g", group = "Git" },
 			{ "<leader>h", group = "Git Hunks" },
 			{ "<leader>l", group = "LSP", icon = "󰒕" },
-			{ "<leader>x", group = "Trouble/Todo", icon = "󰏫" },
 			{ "<leader>z", group = "Scratch/Zen", icon = "" },
+			{ "<leader>s", group = "Search", icon = "" },
+			{ "\\n", group = "Notifications", icon = "󰒕" },
+			{ "\\b", group = "Buffers", icon = "" },
 		},
 	},
 	keys = {

@@ -4,14 +4,14 @@ return {
 	opts = {},
 	keys = {
 		{
-			"<leader>xt",
+			"<leader>st",
 			"<cmd>TodoQuickFix<cr>",
-			desc = "Todo Quickfix",
+			desc = "Search Todo Quickfix",
 		},
 		{
-			"<leader>xT",
+			"<leader>sT",
 			"<cmd>TodoLocList<cr>",
-			desc = "Todo Loclist",
+			desc = "Search Todo Loclist",
 		},
 	},
 }
