@@ -34,30 +34,30 @@ return {
 	},
 
 	keys = {
-		-- Very Useful
+		-- What da dog doin'
 		{
-			"\\s",
+			"<leader><space>",
 			function()
 				Snacks.picker.smart()
 			end,
 			desc = "Smart Find Files",
 		},
 		{
-			"\\c",
+			"<leader>:",
 			function()
 				Snacks.picker.command_history()
 			end,
 			desc = "Command History",
 		},
 		{
-			"\\n",
+			"\\nh",
 			function()
 				Snacks.picker.notifications()
 			end,
 			desc = "Notification History",
 		},
 		{
-			"\\u",
+			"\\nu",
 			function()
 				Snacks.notifier.hide()
 			end,
@@ -78,11 +78,32 @@ return {
 			desc = "Search History",
 		},
 		{
-			"\\b",
+			"\\bl",
 			function()
 				Snacks.picker.lines()
 			end,
 			desc = "Buffer Lines",
+		},
+		{
+			"\\bu",
+			function()
+				Snacks.picker.undo()
+			end,
+			desc = "Undo History",
+		},
+		{
+			"\\bD",
+			function()
+				Snacks.bufdelete()
+			end,
+			desc = "Delete Buffer",
+		},
+		{
+			"\\br",
+			function()
+				Snacks.rename.rename_file()
+			end,
+			desc = "Rename File",
 		},
 		{
 			"\\C",
@@ -94,11 +115,11 @@ return {
 
 		-- find
 		{
-			"<leader><space>",
+			"<leader>fb",
 			function()
 				Snacks.picker.buffers()
 			end,
-			desc = "Recent Buffers",
+			desc = "Buffers",
 		},
 		{
 			"<leader>fc",
@@ -115,6 +136,20 @@ return {
 			desc = "Find Files",
 		},
 		{
+			"<leader>fg",
+			function()
+				Snacks.picker.grep()
+			end,
+			desc = "Grep",
+		},
+		{
+			"<leader>fh",
+			function()
+				Snacks.picker.help()
+			end,
+			desc = "Help Pages",
+		},
+		{
 			"<leader>fp",
 			function()
 				Snacks.picker.projects()
@@ -129,11 +164,12 @@ return {
 			desc = "Recent",
 		},
 		{
-			"<leader>fh",
+			"<leader>fw",
 			function()
-				Snacks.picker.help()
+				Snacks.picker.grep_word()
 			end,
-			desc = "Help Pages",
+			desc = "Visual selection or word",
+			mode = { "n", "x" },
 		},
 
 		-- git
@@ -211,33 +247,18 @@ return {
 
 		-- Grep
 		{
-			"<leader>fb",
+			"<leader>sb",
 			function()
 				Snacks.picker.lines()
 			end,
 			desc = "Buffer Lines",
 		},
 		{
-			"<leader>fB",
+			"<leader>sB",
 			function()
 				Snacks.picker.grep_buffers()
 			end,
 			desc = "Grep Open Buffers",
-		},
-		{
-			"<leader>fg",
-			function()
-				Snacks.picker.grep()
-			end,
-			desc = "Grep",
-		},
-		{
-			"<leader>fw",
-			function()
-				Snacks.picker.grep_word()
-			end,
-			desc = "Visual selection or word",
-			mode = { "n", "x" },
 		},
 
 		-- LSP
@@ -278,14 +299,14 @@ return {
 			desc = "Goto Type Definition",
 		},
 		{
-			"<leader>ls",
+			"<leader>ss",
 			function()
 				Snacks.picker.lsp_symbols()
 			end,
 			desc = "LSP Symbols",
 		},
 		{
-			"<leader>lS",
+			"<leader>sS",
 			function()
 				Snacks.picker.lsp_workspace_symbols()
 			end,
@@ -294,28 +315,28 @@ return {
 
 		-- Search
 		{
-			"<leader>xx",
+			"<leader>sd",
 			function()
 				Snacks.picker.diagnostics()
 			end,
 			desc = "Diagnostics",
 		},
 		{
-			"<leader>xX",
+			"<leader>sD",
 			function()
 				Snacks.picker.diagnostics_buffer()
 			end,
 			desc = "Buffer Diagnostics",
 		},
 		{
-			"<leader>xL",
+			"<leader>sl",
 			function()
 				Snacks.picker.loclist()
 			end,
 			desc = "Location List",
 		},
 		{
-			"<leader>xQ",
+			"<leader>sq",
 			function()
 				Snacks.picker.qflist()
 			end,
@@ -324,53 +345,32 @@ return {
 
 		-- Other
 		{
-			"<leader>bu",
-			function()
-				Snacks.picker.undo()
-			end,
-			desc = "Undo History",
-		},
-		{
-			"<leader>zz",
+			"<leader>z",
 			function()
 				Snacks.zen()
 			end,
 			desc = "Toggle Zen Mode",
 		},
 		{
-			"<leader>zZ",
+			"<leader>Z",
 			function()
 				Snacks.zen.zoom()
 			end,
 			desc = "Toggle Zoom",
 		},
 		{
-			"<leader>zs",
+			"<leader>.",
 			function()
 				Snacks.scratch()
 			end,
 			desc = "Toggle Scratch Buffer",
 		},
 		{
-			"<leader>zS",
+			"<leader>S",
 			function()
 				Snacks.scratch.select()
 			end,
 			desc = "Select Scratch Buffer",
-		},
-		{
-			"<leader>bD",
-			function()
-				Snacks.bufdelete()
-			end,
-			desc = "Delete Buffer",
-		},
-		{
-			"<leader>bR",
-			function()
-				Snacks.rename.rename_file()
-			end,
-			desc = "Rename File",
 		},
 		{
 			"<c-/>",
