@@ -17,3 +17,6 @@ vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" }
 vim.keymap.set("n", "<leader>lc", vim.lsp.buf.code_action, { desc = "Code Action" })
 -- Rename Symbol
 vim.keymap.set("n", "<leader>lR", vim.lsp.buf.rename, { desc = "LSP Rename Symbol" })
+
+-- Close current buffer
+vim.keymap.set("n", "<leader>bd", "<CMD>bdelete<CR>", { silent = true, desc = "Close Current Buffer" })
