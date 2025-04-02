@@ -10,8 +10,9 @@ return {
 			python = { "ruff" },
 
 			-- Web Things
+			htmldjango = { "djlint" },
 			javascript = { "eslint_d" },
-			typescrit = { "eslint_d" },
+			typescript = { "eslint_d" },
 		}
 		local cpp = lint.linters.cpplint
 		cpp.args = {
