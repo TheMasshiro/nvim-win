@@ -32,12 +32,6 @@ return {
 		},
 	},
 	{
-		"Wansmer/treesj",
-		cmd = { "TSJToggle", "TSJSplit", "TSJJoin" },
-		keys = { { "\\bj", ":TSJToggle<CR>", desc = "Toggle Join" } },
-		opts = { use_default_keymaps = false },
-	},
-	{
 		"windwp/nvim-ts-autotag",
 		event = { "BufReadPre", "BufNewFile" },
 		opts = {},
