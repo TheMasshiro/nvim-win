@@ -13,10 +13,11 @@ return {
 		require("mini.ai").setup()
 		require("mini.bracketed").setup()
 		require("mini.cursorword").setup()
+		require("mini.git").setup()
 		require("mini.operators").setup()
+		require("mini.splitjoin").setup()
 		require("mini.surround").setup()
 		require("mini.trailspace").setup()
-		require("mini.git").setup()
 
 		-- File Explorer
 		require("mini.files").setup()
