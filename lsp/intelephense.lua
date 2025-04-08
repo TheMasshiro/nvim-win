@@ -1,4 +1,4 @@
-local mason_path = vim.fn.stdpath("data") .. "/mason/bin/"
+local mason_path = require("config.paths").nvim.mason
 
 return {
     cmd = { mason_path .. "intelephense.cmd" },

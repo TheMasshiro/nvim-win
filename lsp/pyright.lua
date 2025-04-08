@@ -1,10 +1,8 @@
-local mason_path = vim.fn.stdpath("data") .. "/mason/bin/"
+local mason_path = require("config.paths").nvim.mason
 
 return {
-
 	cmd = { mason_path .. "pyright-langserver.cmd", "--stdio" },
 	filetypes = { "python" },
-	single_file_support = true,
 	root_markers = { "setup.py", "pyproject.toml", "requirements.txt", ".venv" },
 	settings = {
 		python = {
@@ -14,4 +12,5 @@ return {
 			},
 		},
 	},
+	single_file_support = true,
 }
