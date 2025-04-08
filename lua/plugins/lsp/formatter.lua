@@ -1,4 +1,4 @@
-local mason_path = vim.fn.stdpath("data") .. "/mason/bin/"
+local paths = require("config.paths")
 
 return {
     "stevearc/conform.nvim",
@@ -29,33 +29,7 @@ return {
                 lsp_format = lsp_format_opt,
             }
         end,
-        formatters = {
-            isort = {
-                command = mason_path .. "isort.cmd",
-                args = {
-                    "-",
-                },
-            },
-            ruff_format = {
-                command = mason_path .. "ruff.cmd",
-                args = { "format", "-" },
-            },
-            stylua = {
-                command = mason_path .. "stylua.cmd",
-            },
-            ["clang-format"] = {
-                command = mason_path .. "clang-format.cmd",
-            },
-            prettierd = {
-                command = mason_path .. "prettierd.cmd",
-            },
-            ["php-cs-fixer"] = {
-                command = mason_path .. "php-cs-fixer.cmd",
-            },
-            djlint = {
-                command = mason_path .. "djlint.cmd",
-            },
-        },
+        formatters = paths.formatters,
         formatters_by_ft = {
             c = { "clang-format" },
             cpp = { "clang-format" },
@@ -75,6 +49,5 @@ return {
             markdown = { "prettierd" },
             yaml = { "prettierd" },
         },
-
     },
 }
