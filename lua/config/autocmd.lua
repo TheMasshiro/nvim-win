@@ -3,10 +3,13 @@ local autocmd = vim.api.nvim_create_autocmd
 
 -- Highlight Yank
 autocmd("TextYankPost", {
-	desc = "Highlight when yanking text",
-	group = augroup("highlight-yank", { clear = true }),
+	group = augroup("HighlightYank", {}),
+	pattern = "*",
 	callback = function()
-		vim.highlight.on_yank()
+		vim.highlight.on_yank({
+			higroup = "IncSearch",
+			timeout = 50,
+		})
 	end,
 })
 
