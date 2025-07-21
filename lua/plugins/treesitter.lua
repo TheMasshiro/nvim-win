@@ -9,6 +9,7 @@ return {
 				"c",
 				"diff",
 				"html",
+				"latex",
 				"lua",
 				"luadoc",
 				"markdown",
@@ -35,5 +36,12 @@ return {
 		"windwp/nvim-ts-autotag",
 		event = { "BufReadPre", "BufNewFile" },
 		opts = {},
+	},
+	{
+		"nvim-treesitter/nvim-treesitter-context",
+		event = { "BufReadPre", "BufNewFile" },
+		opts = {
+			max_lines = 2,
+		},
 	},
 }
