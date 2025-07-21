@@ -1,5 +1,15 @@
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = vim.tbl_deep_extend("force", capabilities, require("blink.cmp").get_lsp_capabilities({}, false))
+
 vim.lsp.config("*", {
-	capabilities = require("blink.cmp").get_lsp_capabilities(vim.lsp.protocol.make_client_capabilities()),
+	capabilities = vim.tbl_deep_extend("force", capabilities, {
+		textDocument = {
+			foldingRange = {
+				dynamicRegistration = false,
+				lineFoldingOnly = true,
+			},
+		},
+	}),
 	root_markers = { ".git" },
 })
 
@@ -10,6 +20,7 @@ vim.lsp.enable({
 	"html",
 	"luals",
 	"pyright",
+	"ruff",
 	"tsls",
 })
 
