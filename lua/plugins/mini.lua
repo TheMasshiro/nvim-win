@@ -9,78 +9,18 @@ return {
 		},
 	},
 	config = function()
-		-- Essentials
-		require("mini.ai").setup()
-		require("mini.bracketed").setup()
-		require("mini.cursorword").setup()
-		require("mini.git").setup()
-		require("mini.operators").setup()
-		require("mini.splitjoin").setup()
-		require("mini.surround").setup()
-		require("mini.trailspace").setup()
-
-		-- File Explorer
-		require("mini.files").setup()
-
-		-- Icons
-		require("mini.icons").setup({
-			file = {
-				[".keep"] = { glyph = "󰊢", hl = "MiniIconsGrey" },
-				["devcontainer.json"] = { glyph = "", hl = "MiniIconsAzure" },
-			},
-			filetype = {
-				dotenv = { glyph = "", hl = "MiniIconsYellow" },
-			},
-		})
-
-		-- Custom Mini.Pairs
-		require("mini.pairs").setup({
-			modes = { insert = true, command = false, terminal = false },
-			mappings = {
-				[")"] = { action = "close", pair = "()", neigh_pattern = "[^\\]." },
-				["]"] = { action = "close", pair = "[]", neigh_pattern = "[^\\]." },
-				["}"] = { action = "close", pair = "{}", neigh_pattern = "[^\\]." },
-				["["] = {
-					action = "open",
-					pair = "[]",
-					neigh_pattern = ".[%s%z%)}%]]",
-					register = { cr = false },
-				},
-				["{"] = {
-					action = "open",
-					pair = "{}",
-					neigh_pattern = ".[%s%z%)}%]]",
-					register = { cr = false },
-				},
-				["("] = {
-					action = "open",
-					pair = "()",
-					neigh_pattern = ".[%s%z%)]",
-					register = { cr = false },
-				},
-				['"'] = {
-					action = "closeopen",
-					pair = '""',
-					neigh_pattern = "[^%w\\][^%w]",
-					register = { cr = false },
-				},
-				["'"] = {
-					action = "closeopen",
-					pair = "''",
-					neigh_pattern = "[^%w\\][^%w]",
-					register = { cr = false },
-				},
-				["`"] = {
-					action = "closeopen",
-					pair = "``",
-					neigh_pattern = "[^%w\\][^%w]",
-					register = { cr = false },
-				},
-			},
-		})
+		require("plugins.mini.ai")()
+		require("plugins.mini.bracketed")()
+		require("plugins.mini.cursorword")()
+		require("plugins.mini.files")()
+		require("plugins.mini.git")()
+		require("plugins.mini.icon")()
+		require("plugins.mini.operators")()
+		require("plugins.mini.pairs")()
+		require("plugins.mini.splitjoin")()
+		require("plugins.mini.surround")()
+		require("plugins.mini.trailspace")()
 	end,
-
-	-- Mini.Icons
 	init = function()
 		package.preload["nvim-web-devicons"] = function()
 			require("mini.icons").mock_nvim_web_devicons()
